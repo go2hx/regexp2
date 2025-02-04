@@ -1,5 +1,6 @@
--lib go2hx_regexp2
+#-lib go2hx_regexp2
 -lib go2hx
+-cp golibs
 -m Example
 --js example.js
 --cmd node example.js
