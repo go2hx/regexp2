@@ -4,5 +4,7 @@ function main() {
     if (r.right != null) {
         throw r.right;
     }
+    trace(r.left.matchString("abc").left);
     trace(r.left.matchString("xyz").left);
+    trace(r.left.matchString("def").left);
 }
