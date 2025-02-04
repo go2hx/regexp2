@@ -3,8 +3,6 @@ name: js
 
 on: [push,pull_request]
 
-concurrency:
-  group: ${{ github.ref }}
 jobs:
   js:
     

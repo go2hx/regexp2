@@ -3,8 +3,6 @@ name: interp
 
 on: [push,pull_request]
 
-concurrency:
-  group: ${{ github.ref }}
 jobs:
   interp:
     
