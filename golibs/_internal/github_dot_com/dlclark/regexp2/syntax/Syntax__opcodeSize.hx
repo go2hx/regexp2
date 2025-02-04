@@ -1,0 +1,25 @@
+package _internal.github_dot_com.dlclark.regexp2.syntax;
+import stdgo._internal.unicode.Unicode;
+import stdgo._internal.errors.Errors;
+import stdgo._internal.fmt.Fmt;
+import stdgo._internal.strings.Strings;
+import stdgo._internal.strconv.Strconv;
+import stdgo._internal.bytes.Bytes;
+import stdgo._internal.os.Os;
+import stdgo._internal.encoding.binary.Binary;
+import stdgo._internal.sort.Sort;
+function _opcodeSize(_op:_internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp):stdgo.GoInt {
+        _op = (_op & ((63 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp);
+        {
+            final __value__ = _op;
+            if (__value__ == ((22 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((14 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((15 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((16 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((17 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((41 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((42 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((18 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((19 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((20 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((21 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((30 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((31 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((33 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((34 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((35 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((36 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((40 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp))) {
+                return (1 : stdgo.GoInt);
+            } else if (__value__ == ((9 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((10 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((12 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((13 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((37 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((38 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((26 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((27 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((23 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((24 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((25 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((39 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((11 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp))) {
+                return (2 : stdgo.GoInt);
+            } else if (__value__ == ((32 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((28 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((29 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((0 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((1 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((3 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((4 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((6 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((7 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((8 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((2 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp)) || __value__ == ((5 : _internal.github_dot_com.dlclark.regexp2.syntax.Syntax_InstOp.InstOp))) {
+                return (3 : stdgo.GoInt);
+            } else {
+                throw stdgo.Go.toInterface(stdgo._internal.fmt.Fmt_errorf.errorf(("Unexpected op code: %v" : stdgo.GoString), stdgo.Go.toInterface(_op)));
+            };
+        };
+    }
