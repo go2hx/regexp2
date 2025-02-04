@@ -1,0 +1,5 @@
+-lib go2hx_regexp2
+-lib go2hx
+-m Example
+--js example.js
+--cmd node example.js

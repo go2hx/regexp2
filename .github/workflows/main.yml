@@ -1,0 +1,62 @@
+# DO NOT EDIT. Generated from scripts/github-action
+name: build
+
+on: [push,pull_request]
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-hl:
+    
+    timeout-minutes: 26
+    #needs: setup
+    strategy:
+      fail-fast: false
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+        continue-on-error: true
+      - uses: cedx/setup-hashlink@v6.0.0
+      - name: Install lix
+        run: npm i lix -g
+      - name: Run lix
+        run: npx lix download
+      - name: Build
+        run: haxe --run Make hl
+  build-interp:
+    
+    timeout-minutes: 26
+    #needs: setup
+    strategy:
+      fail-fast: false
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+        continue-on-error: true
+    
+      - name: Install lix
+        run: npm i lix -g
+      - name: Run lix
+        run: npx lix download
+      - name: Build
+        run: haxe --run Make interp
+  build-js:
+    
+    timeout-minutes: 26
+    #needs: setup
+    strategy:
+      fail-fast: false
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+        continue-on-error: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 23
+      - name: Install lix
+        run: npm i lix -g
+      - name: Run lix
+        run: npx lix download
+      - name: Build
+        run: haxe --run Make js

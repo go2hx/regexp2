@@ -1,0 +1,16 @@
+
+timeout-minutes: 26
+#needs: setup
+strategy:
+  fail-fast: false
+runs-on: [ubuntu-latest]
+steps:
+  - uses: actions/checkout@v4
+    continue-on-error: true
+::support::
+  - name: Install lix
+    run: npm i lix -g
+  - name: Run lix
+    run: npx lix download
+  - name: Build
+    run: haxe --run Make test ::target::

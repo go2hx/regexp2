@@ -1,0 +1,18 @@
+{
+	"classPath": "golibs",
+	"name": "regexp2",
+	"description": "",
+	"dependencies": {},
+	"url": "https://github.com/go2hx/regexp2",
+	"contributors": [
+		"pxshadow",
+		"elliott5"
+	],
+	"version": "0.1.0",
+	"tags": [
+		"regexp",
+        "universal",
+		"crossplatform"
+	],
+	"license": "MIT"
+}
