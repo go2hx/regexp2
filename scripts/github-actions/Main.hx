@@ -25,21 +25,25 @@ function main() {
             continue;
 
         for (target in targets) {
+
             final buf = new StringBuf();
             buf.add(File.getContent(dir + "main.yml") + "\n");
+
             var content = File.getContent(dir + path);
+
             var support = "";
             if (FileSystem.exists(dir + target + ".yml")) {
                 support = File.getContent(dir + target + ".yml").split("\n").map(line -> "  " + line).join("\n");
             }
-            content = new Template(content).execute({target: target, support: support});
             var lines = content.split("\n");
             lines = lines.map(line -> "    " + line);
             buf.add(
-                content = "  " + name + "-" + target + ":\n" + 
+                content = "  " + target + ":\n" + 
                 lines.join("\n") + "\n"
             );
-            File.saveContent('.github/workflows/$target.yml', "# DO NOT EDIT. Generated from scripts/github-action\n" + buf.toString());
+            content = buf.toString();
+            content = new Template(content).execute({target: target, support: support});
+            File.saveContent('.github/workflows/$target.yml', "# DO NOT EDIT. Generated from scripts/github-action\n" + content);
         }
     }
 }
