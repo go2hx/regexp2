@@ -23,7 +23,7 @@ jobs:
       - name: Run lix
         run: npx lix download
       - name: Build
-        run: haxe --run Make hl
+        run: haxe --run Make test hl
   build-interp:
     
     timeout-minutes: 26
@@ -40,7 +40,7 @@ jobs:
       - name: Run lix
         run: npx lix download
       - name: Build
-        run: haxe --run Make interp
+        run: haxe --run Make test interp
   build-js:
     
     timeout-minutes: 26
@@ -59,4 +59,4 @@ jobs:
       - name: Run lix
         run: npx lix download
       - name: Build
-        run: haxe --run Make js
+        run: haxe --run Make test js
