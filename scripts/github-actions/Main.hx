@@ -13,8 +13,6 @@ final targets = [
 ];
 
 function main() {
-    final buf = new StringBuf();
-    buf.add(File.getContent(dir + "main.yml") + "\n");
 
     for (path in FileSystem.readDirectory(dir)) {
         final ex = Path.extension(path);
@@ -25,8 +23,10 @@ function main() {
         final name = Path.withoutExtension(path);
         if (targets.indexOf(name) != -1 || path == "cppia.yml")
             continue;
-        trace(path);
+
         for (target in targets) {
+            final buf = new StringBuf();
+            buf.add(File.getContent(dir + "main.yml") + "\n");
             var content = File.getContent(dir + path);
             var support = "";
             if (FileSystem.exists(dir + target + ".yml")) {
@@ -39,7 +39,7 @@ function main() {
                 content = "  " + name + "-" + target + ":\n" + 
                 lines.join("\n") + "\n"
             );
+            File.saveContent('.github/workflows/$target.yml', "# DO NOT EDIT. Generated from scripts/github-action\n" + buf.toString());
         }
     }
-    File.saveContent(".github/workflows/main.yml", "# DO NOT EDIT. Generated from scripts/github-action\n" + buf.toString());
 }
