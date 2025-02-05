@@ -21,8 +21,6 @@ jobs:
         run: npx lix download
       - name: example
         run: haxe --run Make example hl
-      - name: test setup
-        run: haxe --run Make testsetup
       - name: test
         run: haxe --run Make test hl
       

@@ -14,8 +14,6 @@ steps:
     run: npx lix download
   - name: example
     run: haxe --run Make example ::target::
-  - name: test setup
-    run: haxe --run Make testsetup
   - name: test
     run: haxe --run Make test ::target::
   
