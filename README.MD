@@ -19,9 +19,9 @@ haxelib git go2hx_regexp2 https://github.com/go2hx/regexp2
 Add ``-lib go2hx_regexp2`` to your hxml for openfl/haxeflixel users ``<haxelib name="go2hx_regexp2" />``
 
 
-# Case study why to use
+# Why use this?
 
-Haxe regexp is target depedent certain features will work on one target and not another.
+Haxe regexp is [target depedent](https://haxe.org/manual/std-regex.html) certain features will work on one target and not another.
 
 Take this example [try.haxe](https://try.haxe.org/#d67D8Cd1):
 ```haxe
@@ -34,8 +34,9 @@ function main() {
 }
 ```
 
-On js you get an error: invalid regexp group.
-On hashlink or interp it works fine.
+On `js` you get an error: invalid regexp group.
+
+On `hashlink` or `interp` it works fine.
 
 
 In order to get this and many other regexp patterns to work crossplatform you can use this library.
@@ -52,7 +53,7 @@ function main() {
 }
 ```
 
-You can now target js with the given regex pattern and it will simply work!
+You can now target `js` with the given regex pattern and it will simply work!
 
 Pretty cool eh?
 
@@ -63,6 +64,6 @@ Run into an issue, feel free to make an [issue](https://github.com/go2hx/regexp2
 
 Interested in [more libs like this](https://github.com/go2hx#working-haxelibs-precompiled)?
 
-Want to get involed in go2hx and/or Haxe community, [join the discord!](https://discord.com/invite/0uEuWH3spjck73Lo)
+Want to get involed in go2hx and/or the Haxe community, [join the discord!](https://discord.com/invite/0uEuWH3spjck73Lo)
 
 
