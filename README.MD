@@ -1,4 +1,4 @@
-# Regexp2
+# Regexp2 **[[api]](https://go2hx.github.io/regexp2/api)**
 
 [![hl](https://github.com/go2hx/regexp2/actions/workflows/hl.yml/badge.svg)](https://github.com/go2hx/regexp2/actions/workflows/hl.yml)
 [![interp](https://github.com/go2hx/regexp2/actions/workflows/interp.yml/badge.svg)](https://github.com/go2hx/regexp2/actions/workflows/interp.yml)
@@ -7,7 +7,7 @@
 
 "Regexp2 is a feature-rich RegExp engine for Go. It doesn't have constant time guarantees like the built-in regexp package, but it allows backtracking and is compatible with Perl5 and .NET" - [dlclark](https://github.com/dlclark)
 
-[Compiled from the regexp2 Go library](https://github.com/dlclark/regexp2) using [go2hx](https://go2hx.github.io/) v0.1.0
+[Regexp2 Go library](https://github.com/dlclark/regexp2) compiled with [go2hx](https://go2hx.github.io/) v0.1.0
 
 
 
@@ -72,6 +72,4 @@ Run into an issue, feel free to make an [issue](https://github.com/go2hx/regexp2
 
 Interested in [more libs like this](https://github.com/go2hx#working-haxelibs-precompiled)?
 
-Want to get involed in go2hx and/or the Haxe community, [join the discord!](https://discord.com/invite/0uEuWH3spjck73Lo)
-
-
+Want to get involved in go2hx and/or the Haxe community, [join the discord!](https://discord.com/invite/0uEuWH3spjck73Lo)
