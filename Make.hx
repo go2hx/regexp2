@@ -5,6 +5,7 @@ function main() {
 		case "testsetup":
 			if (sys.FileSystem.exists("golibstest"))
 				Sys.command("rm -r -d golibstest");
+			Sys.command("npx lix install https://github.com/go2hx/go2hx");
 			Sys.exit(Sys.command("haxelib run go2hx --rebuild https://github.com/dlclark/regexp2 --test --out golibstest --norun -compiler_nodejs --hxml test.hxml"));
         case "test":
 			final excludes = "--exclude TestMarshal --exclude TestUnMarshal --exclude TestPcre_Basics --exclude TestIncorrectTimeoutError --exclude TestStopTimeoutClock";
