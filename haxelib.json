@@ -1,6 +1,6 @@
 {
 	"classPath": "golibs",
-	"name": "regexp2",
+	"name": "go2hx_regexp2",
 	"description": "",
 	"dependencies": {},
 	"url": "https://github.com/go2hx/regexp2",
