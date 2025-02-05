@@ -12,5 +12,8 @@ steps:
     run: npm i lix -g
   - name: Run lix
     run: npx lix download
-  - name: Build
+  - name: example
+    run: haxe --run Make example ::target::
+  - name: test
     run: haxe --run Make test ::target::
+  

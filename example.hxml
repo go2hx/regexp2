@@ -1,4 +1,2 @@
 -cp golibs
 -m Example
---js example.js
---cmd node example.js

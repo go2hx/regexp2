@@ -21,5 +21,8 @@ jobs:
         run: npm i lix -g
       - name: Run lix
         run: npx lix download
-      - name: Build
+      - name: example
+        run: haxe --run Make example js
+      - name: test
         run: haxe --run Make test js
+      
