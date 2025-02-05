@@ -1,0 +1,11 @@
+package _internal.github_dot_com.dlclark.regexp2.syntax;
+import stdgo._internal.unicode.Unicode;
+import stdgo._internal.errors.Errors;
+import stdgo._internal.fmt.Fmt;
+import stdgo._internal.strings.Strings;
+import stdgo._internal.strconv.Strconv;
+import stdgo._internal.bytes.Bytes;
+import stdgo._internal.os.Os;
+import stdgo._internal.encoding.binary.Binary;
+import stdgo._internal.sort.Sort;
+var notRE2SpaceClass : () -> stdgo.Ref<_internal.github_dot_com.dlclark.regexp2.syntax.Syntax_charset.CharSet> = _internal.github_dot_com.dlclark.regexp2.syntax.Syntax__getcharsetfromoldstring._getCharSetFromOldString(_internal.github_dot_com.dlclark.regexp2.syntax.Syntax__re2space._re2Space, true);

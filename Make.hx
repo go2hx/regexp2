@@ -16,7 +16,9 @@ function main() {
             trace("target", target);
             final out = 'test.$target';
             final buildCmd = buildTarget(target, out, "_internal.github_dot_com.dlclark.regexp2_dot_test.Regexp2_dot_test");
-            Sys.command("haxe test.hxml " + buildCmd);
+            final code = Sys.command("haxe test.hxml " + buildCmd);
+			if (code != 0)
+				Sys.exit(code);
             final runCmd = runTarget(target, out, [], "");
             if (runCmd != "") {
                 Sys.exit(Sys.command(runCmd));
