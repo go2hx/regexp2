@@ -2,28 +2,27 @@ function main() {
     final args = Sys.args();
     trace("run command: " + args[0]);
     switch args[0] {
-		case "setup":
-			if (!sys.FileSystem.exists("regexp2"))
-				Sys.command("git clone --depth 1 https://github.com/dlclark/regexp2");
-			Sys.setCwd("regexp2");
-			if (sys.FileSystem.exists("golibs"))
-				Sys.command("rm -r -d golibs");
-			Sys.exit(Sys.command("haxelib run go2hx --rebuild --nodeps . --test --norun -compiler_nodejs --hxml test.hxml"));
+		case "testsetup":
+			if (sys.FileSystem.exists("golibstest"))
+				Sys.command("rm -r -d golibstest");
+			Sys.exit(Sys.command("haxelib run go2hx --rebuild https://github.com/dlclark/regexp2 --test --out golibstest --norun -compiler_nodejs --hxml test.hxml"));
         case "test":
 			final excludes = "--exclude TestMarshal --exclude TestUnMarshal --exclude TestPcre_Basics --exclude TestIncorrectTimeoutError --exclude TestStopTimeoutClock";
-			Sys.setCwd("regexp2");
+			//Sys.setCwd("regexp2");
             final target = args[1];
             trace("target", target);
             final out = 'test.$target';
-            final buildCmd = buildTarget(target, out, "_internal.github_dot_com.dlclark.regexp2_dot_test.Regexp2_dot_test");
-            final code = Sys.command("haxe test.hxml " + buildCmd);
+            var buildCmd = buildTarget(target, out, "_internal.github_dot_com.dlclark.regexp2_dot_test.Regexp2_dot_test");
+			buildCmd = "haxe test.hxml " + buildCmd;
+			if (target == "interp")
+				buildCmd += " " + excludes;
+			Sys.println(buildCmd);
+            final code = Sys.command(buildCmd);
 			if (code != 0)
 				Sys.exit(code);
-            final runCmd = runTarget(target, out, [], "");
-            if (runCmd != "") {
+            final runCmd = runTarget(target, out, [], "") + " " + excludes;
+            if (target != "interp") {
                 Sys.exit(Sys.command(runCmd));
-			}else{
-
 			}
         case "example": // TODO proper testing
 		final target = args[1];
@@ -56,7 +55,9 @@ function buildTarget(target:String, out:String, main:String):String {
 	return switch target {
 		case "hl":
 			'--hl $out';
-		case "jvm", "cpp", "cs", "js", "lua", "python", "php", "neko":
+		case "js":
+			'--$target $out -lib hxnodejs';
+		case "jvm", "cpp", "cs", "lua", "python", "php", "neko":
 			'--$target $out';
 		case "interp":
 			'--run $main';
