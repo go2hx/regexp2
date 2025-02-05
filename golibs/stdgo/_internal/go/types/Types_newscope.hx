@@ -1,0 +1,9 @@
+package stdgo._internal.go.types;
+function newScope(_parent:stdgo.Ref<stdgo._internal.go.types.Types_scope.Scope>, _pos:stdgo._internal.go.token.Token_pos.Pos, _end:stdgo._internal.go.token.Token_pos.Pos, _comment:stdgo.GoString):stdgo.Ref<stdgo._internal.go.types.Types_scope.Scope> {
+        var _s = (stdgo.Go.setRef((new stdgo._internal.go.types.Types_scope.Scope(_parent, (null : stdgo.Slice<stdgo.Ref<stdgo._internal.go.types.Types_scope.Scope>>), (0 : stdgo.GoInt), (null : stdgo.GoMap<stdgo.GoString, stdgo._internal.go.types.Types_object.Object>), _pos, _end, _comment?.__copy__(), false) : stdgo._internal.go.types.Types_scope.Scope)) : stdgo.Ref<stdgo._internal.go.types.Types_scope.Scope>);
+        if (((_parent != null && ((_parent : Dynamic).__nil__ == null || !(_parent : Dynamic).__nil__)) && (_parent != stdgo._internal.go.types.Types_universe.universe) : Bool)) {
+            (@:checkr _parent ?? throw "null pointer dereference")._children = ((@:checkr _parent ?? throw "null pointer dereference")._children.__append__(_s));
+            (@:checkr _s ?? throw "null pointer dereference")._number = ((@:checkr _parent ?? throw "null pointer dereference")._children.length);
+        };
+        return _s;
+    }

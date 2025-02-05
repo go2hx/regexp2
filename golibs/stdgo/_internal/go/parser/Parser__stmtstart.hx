@@ -1,0 +1,20 @@
+package stdgo._internal.go.parser;
+var _stmtStart : stdgo.GoMap<stdgo._internal.go.token.Token_token.Token, Bool> = ({
+        final x = new stdgo.GoMap.GoIntMap<Bool>();
+        x.__defaultValue__ = () -> false;
+        x.set((61 : stdgo._internal.go.token.Token_token.Token), true);
+x.set((64 : stdgo._internal.go.token.Token_token.Token), true);
+x.set((65 : stdgo._internal.go.token.Token_token.Token), true);
+x.set((67 : stdgo._internal.go.token.Token_token.Token), true);
+x.set((69 : stdgo._internal.go.token.Token_token.Token), true);
+x.set((70 : stdgo._internal.go.token.Token_token.Token), true);
+x.set((72 : stdgo._internal.go.token.Token_token.Token), true);
+x.set((73 : stdgo._internal.go.token.Token_token.Token), true);
+x.set((74 : stdgo._internal.go.token.Token_token.Token), true);
+x.set((80 : stdgo._internal.go.token.Token_token.Token), true);
+x.set((81 : stdgo._internal.go.token.Token_token.Token), true);
+x.set((83 : stdgo._internal.go.token.Token_token.Token), true);
+x.set((84 : stdgo._internal.go.token.Token_token.Token), true);
+x.set((85 : stdgo._internal.go.token.Token_token.Token), true);
+        x;
+    } : stdgo.GoMap<stdgo._internal.go.token.Token_token.Token, Bool>);

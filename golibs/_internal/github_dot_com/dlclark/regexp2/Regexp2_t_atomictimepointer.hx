@@ -1,0 +1,10 @@
+package _internal.github_dot_com.dlclark.regexp2;
+import stdgo._internal.time.Time;
+import _internal.github_dot_com.dlclark.regexp2.syntax.Syntax;
+import stdgo._internal.strconv.Strconv;
+import stdgo._internal.errors.Errors;
+import stdgo._internal.sync.atomic_.Atomic_;
+import stdgo._internal.fmt.Fmt;
+import stdgo._internal.unicode.Unicode;
+import stdgo._internal.strings.Strings;
+@:keep @:follow @:using(_internal.github_dot_com.dlclark.regexp2.Regexp2_t_atomictime_static_extension.T_atomicTime_static_extension) typedef T_atomicTimePointer = stdgo.Pointer<_internal.github_dot_com.dlclark.regexp2.Regexp2_t_atomictime.T_atomicTime>;

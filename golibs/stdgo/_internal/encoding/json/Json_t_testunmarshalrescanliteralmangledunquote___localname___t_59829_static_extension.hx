@@ -1,0 +1,4 @@
+package stdgo._internal.encoding.json;
+@:keep @:allow(stdgo._internal.encoding.json.Json.T_testUnmarshalRescanLiteralMangledUnquote___localname___T_59829_asInterface) class T_testUnmarshalRescanLiteralMangledUnquote___localname___T_59829_static_extension {
+
+}
